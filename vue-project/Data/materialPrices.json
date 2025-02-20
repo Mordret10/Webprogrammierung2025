@@ -1,4 +1,33 @@
+//pricePerDay in €
 [
+  {
+    "name": "Shure SM58",
+    "pricePerDay": "5"
+  },
+  {
+    "name": "Cable Set (Schuko XLR Speakon)",
+    "pricePerDay": "10"
+  },
+  {
+    "name": "Midas M32R",
+    "pricePerDay": "80"
+  },
+  {
+    "name": "Midas DL32",
+    "pricePerDay": "40"
+  },
+  {
+    "name": "L'Acoustics LA4X",
+    "pricePerDay": "40"
+  },
+  {
+    "name": "L'Acoustics X12",
+    "pricePerDay": "30"
+  },
+  {
+    "name": "L'Acoustics SB15m",
+    "pricePerDay": "25"
+  },
   {
     "name": "",
     "pricePerDay": ""
