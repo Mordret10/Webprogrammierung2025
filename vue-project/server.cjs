@@ -28,6 +28,10 @@ app.get('/api/test', (req, res) => {
     }
 });
 
+const locationsJSON = require('./Data/locations.json');
+app.get('/api/locations', (req, res) => {
+    res.send(locationsJSON);  // Sends 'Welcome to my API' as the response
+});
 //Either use the build in fetch function or the axios library to consume APIs
 
 // Start the server on port 3000 and log a message to the console
