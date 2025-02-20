@@ -7,6 +7,7 @@ const app = express();
 // Vue builds into the dist directory, meaning every wep page needs to refer to this exact directory
 app.use("/", express.static('dist'));
 app.use("/about", express.static('dist'));
+app.use("/gigs", express.static('dist'));
 
 
 //API endpoints
@@ -28,8 +29,9 @@ app.get('/api/test', (req, res) => {
     }
 });
 
-const locationsJSON = require('./Data/locations.json');
+
 app.get('/api/locations', (req, res) => {
+    const locationsJSON = require('./Data/locations.json');
     res.send(locationsJSON);  // Sends 'Welcome to my API' as the response
 });
 //Either use the build in fetch function or the axios library to consume APIs
