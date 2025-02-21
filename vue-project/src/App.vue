@@ -4,9 +4,8 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <!--
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <!--<img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />-->
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -14,11 +13,35 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/gigs">Gigs</RouterLink>
       </nav>
     </div>
   </header>
-  -->
-  <RouterView />
+  <main>
+    <div class="wrapper">
+      <RouterView />
+    </div>
+    <div>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+      <p>wad</p>
+    </div>
+  </main>
+
 </template>
 
 <style scoped>
@@ -59,9 +82,12 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
+    position: sticky;
+    top:0;
+    background: var(--color-background);
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    /*padding-right: calc(var(--section-gap) / 2);*/
   }
 
   .logo {
@@ -70,13 +96,16 @@ nav a:first-of-type {
 
   header .wrapper {
     display: flex;
-    place-items: flex-start;
+    /*place-items: flex-start;*/
+    place-items: center;
+    justify-content: center;
+
     flex-wrap: wrap;
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
+    text-align: center; /*left*/
+    /*margin-left: -1rem;*/
     font-size: 1rem;
 
     padding: 1rem 0;
