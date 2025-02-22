@@ -23,6 +23,42 @@ const router = createRouter({
 
       component: () => import('../views/LocationsView.vue'),
     },
+    {
+      path: '/booking',
+      name: 'booking',
+
+      component: () => import('../views/BookingView.vue'),
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+
+      component: () => import('../views/ContactView.vue'),
+    },
+    {
+      path: '/curriculumvitae',
+      name: 'curriculumvitae',
+
+      component: () => import('../views/CurriculumVitaeView.vue'),
+    },
+    {
+      path: '/dryhire',
+      name: 'dryhire',
+
+      component: () => import('../views/DryhireView.vue'),
+    },
+    {
+      path: '/gallery',
+      name: 'gallery',
+
+      component: () => import('../views/GalleryView.vue'),
+    },
+    {
+      path: '/legalinfo',
+      name: 'legalinfo',
+
+      component: () => import('../views/LegalInfoView.vue'),
+    },
   ],
 })
 
