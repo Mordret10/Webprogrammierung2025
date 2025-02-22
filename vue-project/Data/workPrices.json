@@ -1,0 +1,10 @@
+[
+  {
+   "name": "musician",
+    "pricePerHour": "30"
+  },
+  {
+    "name": "technician",
+    "pricePerHour": "40"
+  }
+]
