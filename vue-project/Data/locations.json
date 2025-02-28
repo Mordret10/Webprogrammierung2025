@@ -1,12 +1,5 @@
 [
   {
-    "name": "Tante Berta Fest",
-    "location": "Gottesbrück 8, 15537 Grünheide",
-    "act": "Katie Bird",
-    "date": "17.08.2024",
-    "APICall": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.5094011202987!2d13.799597577272522!3d52.41556714395536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8307a193e1909%3A0xb7b0522fa4a10479!2sGottesbr%C3%BCck%208%2C%2015537%20Gr%C3%BCnheide%20(Mark)!5e0!3m2!1sde!2sde!4v1739541661033!5m2!1sde!2sde"
-  },
-  {
     "name": "Soli für das Café Wut",
     "location": "Treibsand Lübeck",
     "act": "Blaske",
