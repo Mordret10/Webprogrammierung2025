@@ -77,19 +77,36 @@ app.post('/api/technicianReq', (req, res) => {
     return res.send('Booking request was successfully received.');
 });
 
-app.post('/api/dryHireReq', (req, res) => {
-    const dryHireReq = req.body;
+app.post('/api/musicianReq', (req, res) => {
+    const bookingReq = req.body;
 
-    fs.readFile('./IncomingData/dryhires.json', 'utf8', (err, data) => {
-        const hires = JSON.parse(data);
-        hires.push(dryHireReq);
-        fs.writeFile('./IncomingData/dryhires.json', JSON.stringify(hires), 'utf8', () => {
+    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
+        const bookings = JSON.parse(data);
+        bookingReq.bookingType = "musician";
+        bookings.push(bookingReq);
+        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
             res.status(201).end();
         });
     });
 
 
-    return res.send('Dry Hire request was successfully received.');
+    return res.send('Booking request was successfully received.');
+});
+
+app.post('/api/dryhireReq', (req, res) => {
+    const bookingReq = req.body;
+
+    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
+        const bookings = JSON.parse(data);
+        bookingReq.bookingType = "dryhire";
+        bookings.push(bookingReq);
+        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
+            res.status(201).end();
+        });
+    });
+
+
+    return res.send('Booking request was successfully received.');
 });
 
 app.post('/api/contactReq', (req, res) => {
