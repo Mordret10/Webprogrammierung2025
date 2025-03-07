@@ -18,10 +18,22 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
+      path: '/cv',
+      name: 'cv',
+
+      component: () => import('../views/CurriculumVitaeView.vue'),
+    },
+    {
       path: '/gigs',
       name: 'gigs',
 
       component: () => import('../views/LocationsView.vue'),
+    },
+    {
+      path: '/gallery',
+      name: 'gallery',
+
+      component: () => import('../views/GalleryView.vue'),
     },
     {
       path: '/booking',
@@ -30,28 +42,16 @@ const router = createRouter({
       component: () => import('../views/BookingView.vue'),
     },
     {
-      path: '/contact',
-      name: 'contact',
-
-      component: () => import('../views/ContactView.vue'),
-    },
-    {
-      path: '/curriculumvitae',
-      name: 'curriculumvitae',
-
-      component: () => import('../views/CurriculumVitaeView.vue'),
-    },
-    {
       path: '/dryhire',
       name: 'dryhire',
 
       component: () => import('../views/DryhireView.vue'),
     },
     {
-      path: '/gallery',
-      name: 'gallery',
+      path: '/contact',
+      name: 'contact',
 
-      component: () => import('../views/GalleryView.vue'),
+      component: () => import('../views/ContactView.vue'),
     },
     {
       path: '/legalinfo',
