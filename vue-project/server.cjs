@@ -68,6 +68,36 @@ app.post('/api/bookingReq', (req, res) => {
     return res.send('Booking request was successfully received.');
 });
 
+app.post('/api/dryHireReq', (req, res) => {
+    const dryHireReq = req.body;
+
+    fs.readFile('./IncomingData/dryhires.json', 'utf8', (err, data) => {
+        const hires = JSON.parse(data);
+        hires.push(dryHireReq);
+        fs.writeFile('./IncomingData/dryhires.json', JSON.stringify(hires), 'utf8', () => {
+            res.status(201).end();
+        });
+    });
+
+
+    return res.send('Dry Hire request was successfully received.');
+});
+
+app.post('/api/contactReq', (req, res) => {
+    const contactReq = req.body;
+
+    fs.readFile('./IncomingData/contact.json', 'utf8', (err, data) => {
+        const contact = JSON.parse(data);
+        contact.push(contactReq);
+        fs.writeFile('./IncomingData/contact.json', JSON.stringify(contact), 'utf8', () => {
+            res.status(201).end();
+        });
+    });
+
+
+    return res.send('Message was successfully received.');
+});
+
 
 
 
