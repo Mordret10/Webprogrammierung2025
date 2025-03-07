@@ -13,12 +13,20 @@ const app = express();
 app.use("/", express.static('dist'));
 app.use("/about", express.static('dist'));
 app.use("/gigs", express.static('dist'));
-app.use("/booking", express.static('dist'));
+app.use("/overviewBookings", express.static('dist'));
 app.use("/contact", express.static('dist'));
 app.use("/curriculumvitae", express.static('dist'));
 app.use("/dryhire", express.static('dist'));
 app.use("/gallery", express.static('dist'));
 app.use("/legalinfo", express.static('dist'));
+app.use("/technician", express.static('dist'));
+app.use("/musician", express.static('dist'));
+
+//Trying Images
+//app.use("public", express.static('public'));
+app.get('/public', function(req, res) {
+    res.sendFile('./public/KSV_Portrait.jpg', { root : __dirname});
+});
 
 //For Parsing Post API
 app.use(express.json());
@@ -53,11 +61,12 @@ app.get('/api/locations', (req, res) => {
 
 });
 
-app.post('/api/bookingReq', (req, res) => {
+app.post('/api/technicianReq', (req, res) => {
     const bookingReq = req.body;
 
     fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
         const bookings = JSON.parse(data);
+        bookingReq.bookingType = "technician";
         bookings.push(bookingReq);
         fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
             res.status(201).end();

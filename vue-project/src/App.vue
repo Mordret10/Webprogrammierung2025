@@ -16,8 +16,8 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/cv">CV</RouterLink>
         <RouterLink to="/gigs">Gigs</RouterLink>
         <RouterLink to="/gallery">Gallery</RouterLink>
-        <RouterLink to="/booking">Booking</RouterLink>
-        <RouterLink to="/dryhire">Dry Hire</RouterLink>
+        <RouterLink to="/overviewBookings">Booking Overview</RouterLink>
+        <!-- Dry Hire, Musician, Technician -->
         <RouterLink to="/contact">Contact</RouterLink>
         <RouterLink to="/legalinfo">Legal Info</RouterLink>
       </nav>

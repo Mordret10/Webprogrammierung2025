@@ -36,10 +36,16 @@ const router = createRouter({
       component: () => import('../views/GalleryView.vue'),
     },
     {
-      path: '/booking',
-      name: 'booking',
+      path: '/technician',
+      name: 'technician',
 
-      component: () => import('../views/BookingView.vue'),
+      component: () => import('../views/BookingTechnicianView.vue'),
+    },
+    {
+      path: '/musician',
+      name: 'musician',
+
+      component: () => import('../views/BookingMusicianView.vue'),
     },
     {
       path: '/dryhire',
@@ -58,6 +64,12 @@ const router = createRouter({
       name: 'legalinfo',
 
       component: () => import('../views/LegalInfoView.vue'),
+    },
+    {
+      path: '/overviewBookings',
+      name: 'overviewBookings',
+
+      component: () => import('../views/OverviewBookingsView.vue'),
     },
   ],
 })

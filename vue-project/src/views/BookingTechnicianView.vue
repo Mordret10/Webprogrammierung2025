@@ -18,7 +18,7 @@ export default {
           ReqName: this.name,
           ReqMessage: this.message,
         })
-        fetch("/api/bookingReq", {
+        fetch("/api/technicianReq", {
           method: "post",
           headers: {
             'Accept': 'application/json',
@@ -47,7 +47,7 @@ export default {
   <div class="booking">
     <h1>Booking</h1>
     <p>Would you like to hire Katie?</p>
-    <p>You can book her, either as a musician or as an event technician.</p>
+    <!--<p>You can book her, either as a musician or as an event technician.</p>-->
     <p>Calculate prices down below.</p>
 
     <input v-model="email" placeholder="Email Address" />
