@@ -45,8 +45,12 @@ app.get('/api/test', (req, res) => {
 
 
 app.get('/api/locations', (req, res) => {
-    const locationsJSON = require('./Data/locations.json');
-    res.send(locationsJSON);  // Sends 'Welcome to my API' as the response
+    //const locationsJSON = require('./Data/locations.json');
+    fs.readFile('./Data/locations.json', 'utf8', (err, data) => {
+        res.send(data);
+    });
+
+
 });
 
 app.post('/api/bookingReq', (req, res) => {
