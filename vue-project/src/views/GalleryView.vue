@@ -5,6 +5,7 @@
 <template>
   <div class="gallery"
   ></div>
+
 </template>
 
 <style scoped>
