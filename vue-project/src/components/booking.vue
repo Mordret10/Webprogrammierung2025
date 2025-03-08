@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ['bookingType'],
+  props: ['bookingType', 'messagePreset'],
   data() {
     return {
       JSON_Object: JSON.parse("[{}]"),
@@ -8,6 +8,12 @@ export default {
       name: "",
       message: "",
       reqResp: "",
+      componentKey: 0
+    }
+  },
+  updated() {
+    if(this.messagePreset != null) {
+      this.message = this.messagePreset;
     }
   },
   methods: {

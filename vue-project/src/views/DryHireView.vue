@@ -8,15 +8,10 @@ export default {
     return {
       //Variables in syntax: "var: value"
       JSON_Object: JSON.parse("[{}]"),
-      JSON_Name: "",
-      JSON_Location: "",
-      JSON_Date: "",
-      JSON_Act: "",
-      JSON_API_Call: "",
-      JSON_Index: 0,
       checkboxesTicked: [],
       inputValues: [],
-      sum: 0
+      sum: 0,
+      presetConfiguration: null
     }
   },
   mounted() {
@@ -58,6 +53,25 @@ export default {
           this.sum += parseInt(this.JSON_Object[index].pricePerDay) * parseInt(this.inputValues[index]);
         }
       })
+    },
+    addConfigurationToOrder() {
+      let isFirst = true;
+      this.calcMaterialPrices();
+      this.presetConfiguration = "[";
+      this.checkboxesTicked.forEach((currentElement, index) => {
+        if(currentElement) {
+          if(this.inputValues[index] !== 0 && this.inputValues[index] !== null)
+          {
+            if(!isFirst)
+            {
+              this.presetConfiguration += ",";
+            }
+            this.presetConfiguration += "{" + this.JSON_Object[index].name + ": " + this.inputValues[index] + "}";
+            isFirst = false;
+          }
+        }
+      })
+      this.presetConfiguration += "]";
     }
   }
 }
@@ -76,7 +90,7 @@ export default {
     <div>
       <ul>
         <li v-for="(material,index) in JSON_Object" @click="JSON_Index=index">
-          <label :for="material.name"> {{material.name}}</label><br>
+          <label :for="material.name"> {{material.name}} ({{JSON_Object[index].pricePerDay}}€/d)</label><br>
           <input type="checkbox" v-model="checkboxesTicked[index]" :id="material.name">
           <input v-if="checkboxesTicked[index]" v-model="inputValues[index]" />
         </li>
@@ -84,14 +98,12 @@ export default {
     </div>
     <div>
       <button @click="calcMaterialPrices">Calculate Material Prices</button>
+      <button @click="addConfigurationToOrder">Add current configuration to order</button>
       <p>Your total is: {{sum}}€</p>
-      <p>Values {{inputValues}}</p>
-      <p>Ticked {{checkboxesTicked}}</p>
-      <p v-for="material in JSON_Object" >{{material.pricePerDay}}</p>
     </div>
   </div>
   <div class="booking">
-    <booking bookingType="dryhire"></booking>
+    <booking bookingType="dryhire" :messagePreset="this.presetConfiguration"></booking>
   </div>
 </template>
 
