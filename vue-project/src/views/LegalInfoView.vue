@@ -12,7 +12,7 @@
 
     <p>is responsible for the page contents.</p>
     <p>Please ask any questions you may have concerning this webpage exclusively by using our central e-mail address:</p>
-    <p>atze.lion[at]gmx.de</p>
+    <p>atze.lion@gmx.de</p>
 
     <h2>Disclaimer</h2>
 
