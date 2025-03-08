@@ -1,1 +1,0 @@
-import{_ as o,c as n,a as e,o as s}from"./index-CmfkbsuJ.js";const t={},a={class:"dryhire"};function c(i,r){return s(),n("div",a,r[0]||(r[0]=[e("h1",null,"Dry Hire",-1),e("p",null,"Katie is renting out audio equipment for dry hire purposes.",-1),e("p",null,"You can calculate prices down below.",-1)]))}const u=o(t,[["render",c]]);export{u as default};
