@@ -51,7 +51,7 @@ const router = createRouter({
       path: '/dryhire',
       name: 'dryhire',
 
-      component: () => import('../views/DryhireView.vue'),
+      component: () => import('../views/DryHireView.vue'),
     },
     {
       path: '/contact',

@@ -5,43 +5,11 @@ export default {
   components: {Booking},
   data() {
     return {
-      JSON_Object: JSON.parse("[{}]"),
-      email: "",
-      name: "",
-      message: "",
-      reqResp: "",
+      //Variables in syntax: "var: value"
     }
   },
   methods: {
-    sendBookingRequest() {
-      if (this.email !== "" && this.name !== "" && this.message !== "")
-      {
-        this.debugText = JSON.stringify({
-          ReqEmail: this.email,
-          ReqName: this.name,
-          ReqMessage: this.message,
-        })
-        fetch("/api/musicianReq", {
-          method: "post",
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            ReqEmail: this.email,
-            ReqName: this.name,
-            ReqMessage: this.message,
-          })
-        })
-            .then((response) => {
-              this.ReqResp = response;
-            });
-      }
-      else
-      {
-
-      }
-    }
+    //methods
   }
 }
 </script>
