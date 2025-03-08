@@ -57,9 +57,15 @@ app.get('/api/locations', (req, res) => {
     fs.readFile('./Data/locations.json', 'utf8', (err, data) => {
         res.send(data);
     });
-
-
 });
+
+app.get('/api/materialprices', (req, res) => {
+    //const locationsJSON = require('./Data/locations.json');
+    fs.readFile('./Data/materialPrices.json', 'utf8', (err, data) => {
+        res.send(data);
+    });
+});
+
 app.post('/api/booking', (req, res) => {
     const bookingReq = req.body;
 
@@ -70,59 +76,9 @@ app.post('/api/booking', (req, res) => {
             res.status(201).end();
         });
     });
-
-
     return res.json({msg: 'Booking request has been successfully received.'});
 });
-/*
-app.post('/api/technicianReq', (req, res) => {
-    const bookingReq = req.body;
 
-    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
-        const bookings = JSON.parse(data);
-        bookingReq.bookingType = "technician";
-        bookings.push(bookingReq);
-        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
-            res.status(201).end();
-        });
-    });
-
-
-    return res.send('Booking request was successfully received.');
-});
-
-app.post('/api/musicianReq', (req, res) => {
-    const bookingReq = req.body;
-
-    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
-        const bookings = JSON.parse(data);
-        bookingReq.bookingType = "musician";
-        bookings.push(bookingReq);
-        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
-            res.status(201).end();
-        });
-    });
-
-
-    return res.send('Booking request was successfully received.');
-});
-
-app.post('/api/dryhireReq', (req, res) => {
-    const bookingReq = req.body;
-
-    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
-        const bookings = JSON.parse(data);
-        bookingReq.bookingType = "dryhire";
-        bookings.push(bookingReq);
-        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
-            res.status(201).end();
-        });
-    });
-
-
-    return res.send('Booking request was successfully received.');
-});
-*/
 app.post('/api/contactReq', (req, res) => {
     const contactReq = req.body;
 
@@ -133,7 +89,6 @@ app.post('/api/contactReq', (req, res) => {
             res.status(201).end();
         });
     });
-
 
     return res.send('Message has been successfully received.');
 });

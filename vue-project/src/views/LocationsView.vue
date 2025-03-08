@@ -12,10 +12,11 @@ export default {
       JSON_Index: 0
     }
   },
+  mounted() {
+    this.readJson();
+  },
   methods: {
     readJson () {
-      // http://localhost:8080
-      console.log("Reading");
       fetch('/api/locations')
           .then(response => {
             if (!response.ok) {
@@ -39,7 +40,6 @@ export default {
 
 <template>
   <h1>Gigs</h1>
-  <button @click="readJson">READ</button>
   <!--<p>{{JSON_Object}}</p>-->
   <div>
     <button v-for="(gig,index) in JSON_Object" @click="JSON_Index=index">{{gig.name}}</button>
