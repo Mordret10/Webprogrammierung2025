@@ -1,5 +1,8 @@
 <script>
+import Booking from "@/components/booking.vue";
+
 export default {
+  components: {Booking},
   data() {
     return {
       JSON_Object: JSON.parse("[{}]"),
@@ -45,17 +48,7 @@ export default {
 
 <template>
   <div class="booking">
-    <h1>Booking</h1>
-    <p>Would you like to hire Katie?</p>
-    <!--<p>You can book her, either as a musician or as an event technician.</p>-->
-    <p>Calculate prices down below.</p>
-
-    <input v-model="email" placeholder="Email Address" />
-    <input v-model="name" placeholder="Your Name" />
-    <input v-model="message" placeholder="Type your booking here..." />
-
-    <button @click="sendBookingRequest">Send Booking Request</button>
-
+    <booking bookingType="musician"></booking>
   </div>
 
 </template>

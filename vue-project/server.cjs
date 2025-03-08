@@ -60,7 +60,21 @@ app.get('/api/locations', (req, res) => {
 
 
 });
+app.post('/api/booking', (req, res) => {
+    const bookingReq = req.body;
 
+    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
+        const bookings = JSON.parse(data);
+        bookings.push(bookingReq);
+        fs.writeFile('./IncomingData/bookings.json', JSON.stringify(bookings), 'utf8', () => {
+            res.status(201).end();
+        });
+    });
+
+
+    return res.json({msg: 'Booking request has been successfully received.'});
+});
+/*
 app.post('/api/technicianReq', (req, res) => {
     const bookingReq = req.body;
 
@@ -108,7 +122,7 @@ app.post('/api/dryhireReq', (req, res) => {
 
     return res.send('Booking request was successfully received.');
 });
-
+*/
 app.post('/api/contactReq', (req, res) => {
     const contactReq = req.body;
 
@@ -121,7 +135,7 @@ app.post('/api/contactReq', (req, res) => {
     });
 
 
-    return res.send('Message was successfully received.');
+    return res.send('Message has been successfully received.');
 });
 
 
