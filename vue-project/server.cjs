@@ -21,36 +21,13 @@ app.use("/gallery", express.static('dist'));
 app.use("/legalinfo", express.static('dist'));
 app.use("/technician", express.static('dist'));
 app.use("/musician", express.static('dist'));
-
-//Trying Images
-//app.use("public", express.static('public'));
-app.get('/public', function(req, res) {
-    res.sendFile('./public/KSV_Portrait.jpg', { root : __dirname});
-});
+app.use("/owner", express.static('dist'));
 
 //For Parsing Post API
 app.use(express.json());
 app.use(cors());
 
 //API endpoints
-app.get('/api/message', (req, res) => {
-    res.send('Welcome to my API');  // Sends 'Welcome to my API' as the response
-});
-
-let Test = 0;
-app.get('/api/test', (req, res) => {
-    if(Test === 0)
-    {
-        res.json({ message: 'Hello from Node.js!' });
-        Test = 1;
-    }
-    else if(Test === 1)
-    {
-        res.json({ message: 'Hi from Node.js!' });
-        Test = 0;
-    }
-});
-
 
 app.get('/api/locations', (req, res) => {
     //const locationsJSON = require('./Data/locations.json');
@@ -62,6 +39,20 @@ app.get('/api/locations', (req, res) => {
 app.get('/api/materialprices', (req, res) => {
     //const locationsJSON = require('./Data/locations.json');
     fs.readFile('./Data/materialPrices.json', 'utf8', (err, data) => {
+        res.send(data);
+    });
+});
+
+app.get('/api/getBookings', (req, res) => {
+    //const locationsJSON = require('./Data/locations.json');
+    fs.readFile('./IncomingData/bookings.json', 'utf8', (err, data) => {
+        res.send(data);
+    });
+});
+
+app.get('/api/getContacts', (req, res) => {
+    //const locationsJSON = require('./Data/locations.json');
+    fs.readFile('./IncomingData/contact.json', 'utf8', (err, data) => {
         res.send(data);
     });
 });

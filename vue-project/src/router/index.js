@@ -71,6 +71,12 @@ const router = createRouter({
 
       component: () => import('../views/OverviewBookingsView.vue'),
     },
+    {
+      path: '/owner',
+      name: 'owner',
+
+      component: () => import('../views/GetRequestsView.vue'),
+    },
   ],
 })
 
