@@ -15,7 +15,7 @@ app.use("/about", express.static('dist'));
 app.use("/gigs", express.static('dist'));
 app.use("/overviewBookings", express.static('dist'));
 app.use("/contact", express.static('dist'));
-app.use("/curriculumvitae", express.static('dist'));
+app.use("/cv", express.static('dist'));
 app.use("/dryhire", express.static('dist'));
 app.use("/gallery", express.static('dist'));
 app.use("/legalinfo", express.static('dist'));
