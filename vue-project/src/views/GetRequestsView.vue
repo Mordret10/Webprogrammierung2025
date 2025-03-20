@@ -3,8 +3,8 @@
 export default {
   data() {
     return {
-      JSON_Object_Bookings: JSON.parse("[{}]"),
-      JSON_Object_Contacts: JSON.parse("[{}]"),
+      JSON_Object_Bookings: JSON.parse("[]"),
+      JSON_Object_Contacts: JSON.parse("[]"),
       JSON_Name: "",
       JSON_Location: "",
       JSON_Date: "",
@@ -58,27 +58,29 @@ export default {
 
 <template>
   <h1>Contact Requests</h1>
-  <div>
+  <div v-if="JSON_Object_Contacts != null && JSON_Object_Contacts.length > 0 ">
     <table>
       <tr>
         <th v-for="(attributeKey) in Object.keys(JSON_Object_Contacts[0])">{{attributeKey}}</th>
       </tr>
-      <tr v-for="(contact, index) in JSON_Object_Contacts">
+      <tr v-for="(contact) in JSON_Object_Contacts">
         <td v-for="(attribute) in Object.keys(contact)">{{contact[attribute]}}</td>
       </tr>
     </table>
   </div>
+
   <h1>Booking Requests</h1>
-  <div>
+  <div v-if="JSON_Object_Bookings != null && JSON_Object_Bookings.length > 0 ">
     <table>
       <tr>
         <th v-for="(attributeKey) in Object.keys(JSON_Object_Bookings[0])">{{attributeKey}}</th>
       </tr>
-      <tr v-for="(contact, index) in JSON_Object_Bookings">
+      <tr v-for="(contact) in JSON_Object_Bookings">
         <td v-for="(attribute) in Object.keys(contact)">{{contact[attribute]}}</td>
       </tr>
     </table>
   </div>
+
 </template>
 
 <style scoped>
