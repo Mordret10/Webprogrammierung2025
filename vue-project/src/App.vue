@@ -11,7 +11,6 @@ import HelloWorld from './components/HelloWorld.vue'
       <img alt="Katja Image" src="/KSV_Portrait.jpg" width="150" height="150" />
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/cv">CV</RouterLink>
         <RouterLink to="/gigs">Gigs</RouterLink>
         <RouterLink to="/gallery">Gallery</RouterLink>
@@ -23,27 +22,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
   <main>
-    <div class="wrapper">
+    <div class="View">
       <RouterView />
-    </div>
-    <div>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
-      <p>wad</p>
     </div>
   </main>
 
@@ -94,6 +74,10 @@ nav a:first-of-type {
     display: flex;
     place-items: center;
     /*padding-right: calc(var(--section-gap) / 2);*/
+  }
+
+  div.View {
+    width: 1000px;
   }
 
   .logo {

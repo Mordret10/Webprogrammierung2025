@@ -22,7 +22,7 @@
       Katie Bird expressively does not adopt the contents provided on these third-party pages as her own.</p>
 
     <h3>Development Team</h3>
-    <p>Julius Julius Flaccus</p>
+    <p>Julius Lucius Flaccus</p>
     <p>Katja-Sophie Vogel</p>
 
     <h3>Acknowledgements</h3>
