@@ -1,1 +1,0 @@
-import{B as e}from"./booking-C9mJr7Hn.js";import{_ as n,c as t,d as c,e as s,o as a}from"./index-BWLGvktJ.js";const i={components:{Booking:e},data(){return{}},methods:{}},r={class:"booking"};function p(_,d,m,k,f,g){const o=s("booking");return a(),t("div",r,[c(o,{bookingType:"technician"})])}const u=n(i,[["render",p]]);export{u as default};

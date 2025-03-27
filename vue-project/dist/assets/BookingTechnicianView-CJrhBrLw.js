@@ -1,0 +1,1 @@
+import{B as e}from"./booking-DMV5WmWL.js";import{_ as n,c as t,f as c,g as s,o as a}from"./index-BmPVNXyb.js";const i={components:{Booking:e},data(){return{}},methods:{}},r={class:"booking"};function p(_,m,d,f,k,g){const o=s("booking");return a(),t("div",r,[c(o,{bookingType:"technician"})])}const u=n(i,[["render",p]]);export{u as default};

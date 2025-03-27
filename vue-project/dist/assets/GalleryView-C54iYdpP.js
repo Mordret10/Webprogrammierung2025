@@ -1,1 +1,0 @@
-import{_ as r,c as a,a as e,F as s,o as l}from"./index-BWLGvktJ.js";const n="/KSV_Portrait.jpg",o={};function i(c,t){return l(),a(s,null,[t[0]||(t[0]=e("div",{class:"gallery"},null,-1)),t[1]||(t[1]=e("div",null,[e("img",{alt:"Katja Image",src:n,width:"125",height:"125"})],-1))],64)}const _=r(o,[["render",i]]);export{_ as default};

@@ -45,6 +45,19 @@ export default {
     <button v-for="(gig,index) in JSON_Object" @click="JSON_Index=index">{{gig.name}}</button>
   </div>
   <iframe :src="JSON_Object[JSON_Index].APICall" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <div v-if="JSON_Object != null && JSON_Object.length > 0 ">
+    <table>
+      <tr>
+        <th v-for="(attributeKey) in Object.keys(JSON_Object[0])"><p v-if="attributeKey!=='APICall'">{{attributeKey}}</p></th>
+      </tr>
+      <tr v-for="(gig) in JSON_Object">
+        <td v-for="(attribute) in Object.keys(gig)">
+          <p v-if="attribute!=='APICall'">{{gig[attribute]}}</p>
+          </td>
+      </tr>
+    </table>
+  </div>
 </template>
 
 <style scoped>

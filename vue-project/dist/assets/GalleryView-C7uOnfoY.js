@@ -1,0 +1,1 @@
+import{_ as a,c as r,b as t,e as s,F as l,o as n}from"./index-BmPVNXyb.js";const o={};function i(c,e){return n(),r(l,null,[e[0]||(e[0]=t("div",{class:"gallery"},null,-1)),e[1]||(e[1]=t("div",null,[t("img",{alt:"Katja Image",src:s,width:"125",height:"125"})],-1))],64)}const d=a(o,[["render",i]]);export{d as default};
