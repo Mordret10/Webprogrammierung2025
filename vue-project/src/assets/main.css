@@ -19,6 +19,14 @@ h1 {
   color: hsla(196, 100%, 50%, 1);
 }
 
+h2 {
+  color: hsla(196, 100%, 50%, 1);
+}
+
+h3 {
+  color: hsla(196, 100%, 50%, 1);
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(196, 100%, 37%, 0.2);
